@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-lg-6 col-lg-push-3 col-sm-10 col-sm-push-1">
                     <section class="content-inner">
-                        <p>NEWGENERATION</p>
+                        <p>INTRODUCE NEWGENERATION</p>
                         <blockquote>
                             <p>한번쯤 프로그래밍에 미쳐보자고 시작된 코딩 스터디 모임 NEWGENERATION 입니다.</p>
                             <p>

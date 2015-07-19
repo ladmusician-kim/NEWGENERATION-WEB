@@ -35,6 +35,9 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: subpixel-antialiased;
 }
+a {
+  cursor: pointer;
+}
 
 html {
   font-family: sans-serif;

@@ -1,6 +1,6 @@
 <footer class="footer">
 	<div class="container">
-		<p>Material</p>
+		<p>NEWGENERATION</p>
 	</div>
 </footer>
 <div class="fbtn-container">

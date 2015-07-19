@@ -1,48 +1,70 @@
-<div class="container">
-    <div class="bs-docs-section">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="page-header">
-                    <h1 id="forms">NEWGENERATION</h1>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="well bs-component">
-                    <form class="form-horizontal">
-                        <fieldset>
-                            <legend>로그인</legend>
-                            <div class="form-group">
-                                <label for="inputEmail" class="col-lg-2 control-label">이메일</label>
-                                <div class="col-lg-10">
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputPassword" class="col-lg-2 control-label">비밀번호</label>
-                                <div class="col-lg-10">
-                                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"><span class="checkbox-material"><span class="check"></span></span> 로그인유
-                                        </label>
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-lg-push-4 col-sm-6 col-sm-push-3">
+                    <section class="content-inner">
+                        <div class="card-wrap">
+                            <div class="card">
+                                <div class="card-main">
+                                    <div class="card-header">
+                                        <div class="card-inner">
+                                            <h1 class="card-heading">로그인</h1>
+                                        </div>
                                     </div>
-                                    <a href="#">비밀번호를 잊어버리셨나요?</a>
+                                    <div class="card-inner">
+                                    <!--
+                                        <p class="text-center">
+                                            <span class="avatar avatar-inline avatar-lg">
+                                                <img alt="Login" src="images/users/avatar-001.jpg">
+                                            </span>
+                                        </p>
+                                        --> 
+                                        <form class="form" action="index.html">
+                                            <div class="form-group form-group-label">
+                                                <div class="row">
+                                                    <div class="col-md-10 col-md-push-1">
+                                                        <label class="floating-label" for="login-username">이메일</label>
+                                                        <input class="form-control" id="login-username" type="email">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group form-group-label">
+                                                <div class="row">
+                                                    <div class="col-md-10 col-md-push-1">
+                                                        <label class="floating-label" for="login-password">비밀번호</label>
+                                                        <input class="form-control" id="login-password" type="password">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-md-10 col-md-push-1">
+                                                        <button class="btn btn-block btn-blue waves-button waves-effect waves-light">로그인</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-md-10 col-md-push-1">
+                                                        <div class="checkbox checkbox-adv">
+                                                            <label for="login-remember">
+                                                                <input class="access-hide" id="login-remember" name="login-remember" type="checkbox">로그인 유지
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="col-lg-10 col-lg-offset-2">
-                                    <button class="btn btn-info">회원가입</button>
-                                    <button type="submit" class="btn btn-success">로그인</button>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>
-                    <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
+                        </div>
+                        <div class="clearfix">
+                            <p class="margin-no-top pull-left"><a href="javascript:void(0)">비밀번호 찾기 ?</a></p>
+                            <p class="margin-no-top pull-right"><a href="javascript:void(0)">가입하기</a></p>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </div>  
