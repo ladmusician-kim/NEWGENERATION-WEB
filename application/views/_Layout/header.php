@@ -22,12 +22,12 @@
 	<?php
 	$flashdata = $this->session->flashdata('message');
 	if ($flashdata != null) {
-	?>
+		?>
 
-	<script type="text/javascript">
-		alert('<?=$this->session->flashdata('message')?>');
-	</script>             
-	<?php
+		<script type="text/javascript">
+			alert('<?=$this->session->flashdata('message')?>');
+		</script>             
+		<?php
 	}
 	?>
 	<div class="avoid-fout-indicator avoid-fout-indicator-fixed">
@@ -55,20 +55,28 @@
 		</ul>
 		<a class="header-logo" href="index.html">NEWGENERATION</a>
 		<ul class="nav nav-list pull-right">
-			<li>
-				<a>가입하기</a>
-			</li>
-			<li>
-				<a>로그인</a>
-			</li>
-			<!--
-			<li>
-				<a data-toggle="menu" href="#profile">
-					<span class="access-hide">John Smith</span>
-					<span class="avatar"><img alt="alt text for John Smith avatar" src="/NEWGENERATION/library/img/avatar-001.jpg"></span>
-				</a>
-			</li>
-		-->
+			<?php
+			$isLogin = $this->session->userdata('is_login');
+			if(!$isLogin) {
+			?>
+				<li>
+					<a>가입하기</a>
+				</li>
+				<li>
+					<a>로그인</a>
+				</li>
+			<?php
+			} else {
+			?>
+				<li>
+					<a data-toggle="menu" href="#profile">
+						<span class="access-hide">John Smith</span>
+						<span class="avatar"><img alt="alt text for John Smith avatar" src="/NEWGENERATION/library/img/avatar-001.jpg"></span>
+					</a>
+				</li>
+			<?php
+			}
+			?>
 	</ul>
 </header>
 

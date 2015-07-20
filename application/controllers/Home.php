@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+//require APPPATH . '/libraries/Common_Controller.php';
 
-class Home extends CI_Controller {
+class Home extends NG_Controller {
 	function __construct () {
 		parent::__construct();
 		$this->load->helper('url');
@@ -13,11 +14,5 @@ class Home extends CI_Controller {
 		} else {
 			redirect('/Login/index');
 		}
-	}
-
-	function getViews($viewStr) {
-		$this->load->view('_Layout/header.php');
-		$this->load->view($viewStr);
-		$this->load->view('_Layout/footer.php');
 	}
 }

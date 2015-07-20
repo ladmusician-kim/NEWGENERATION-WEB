@@ -1,8 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-require APPPATH . '/libraries/Common_Controller.php';
+//require APPPATH . '/libraries/Common_Controller.php';
 
-class Auth extends Common_Controller {
+class Auth extends NG_Controller {
   function __construct () {
     parent::__construct();
     $this->load->model('user_model');
@@ -38,5 +38,10 @@ class Auth extends Common_Controller {
       echo 'success';
     }
     */
+  }
+
+  function logout () {
+    $this->session->sess_destroy();
+    redirect('/Home/index');
   }
 }

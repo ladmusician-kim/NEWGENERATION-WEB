@@ -22,7 +22,7 @@
 						<a href="javascript:void(0)"><span class="icon icon-lg">add_to_photos</span>Upload Photo</a>
 					</li>
 					<li>
-						<a href="page-login.html"><span class="icon icon-lg">exit_to_app</span>Logout</a>
+						<a href="/NEWGENERATION/Auth/logout"><span class="icon icon-lg">exit_to_app</span>Logout</a>
 					</li>
 				</ul>
 			</div>

@@ -3,7 +3,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-lg-push-3 col-sm-10 col-sm-push-1">
-                        <h1 class="heading">DAEGU <br/> PROGRAMMING INSTITUTE</h1>
+                        <h1 class="heading">PROGRAMMING LIKE CRAZY</h1>
                     </div>
                 </div>
             </div>
