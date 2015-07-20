@@ -19,6 +19,17 @@
 	<![endif]-->
 </head>
 <body class="avoid-fout">
+	<?php
+	$flashdata = $this->session->flashdata('message');
+	if ($flashdata != null) {
+	?>
+
+	<script type="text/javascript">
+		alert('<?=$this->session->flashdata('message')?>');
+	</script>             
+	<?php
+	}
+	?>
 	<div class="avoid-fout-indicator avoid-fout-indicator-fixed">
 		<div class="progress-circular progress-circular-alt progress-circular-center">
 			<div class="progress-circular-wrapper">
@@ -58,6 +69,6 @@
 				</a>
 			</li>
 		-->
-		</ul>
-	</header>
+	</ul>
+</header>
 

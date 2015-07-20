@@ -19,12 +19,7 @@
                                             </span>
                                         </p>
                                         --> 
-                                        <?php
-                                            $flashdata = $this->session->flashdata('message');
-                                            if ($flashdata != null) {
-                                                echo $flashdata;                                                
-                                            }
-                                        ?>
+                                        
                                         <form class="form" action="/NEWGENERATION/Auth/authentication" method="POST">
                                             <div class="form-group form-group-label">
                                                 <div class="row">
