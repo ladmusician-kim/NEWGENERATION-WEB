@@ -12,7 +12,7 @@ class Home extends NG_Controller {
 		if ($this->session->userdata('is_login')) {
 			$this->getViews('Home/index');
 		} else {
-			redirect('/Login/index');
+			redirect('/Auth/login');
 		}
 	}
 }

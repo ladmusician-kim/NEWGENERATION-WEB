@@ -7,7 +7,23 @@
 	<title>NEWGENERATION</title>
 
 	<!-- css -->
-	<link href="/NEWGENERATION/library/css/common.css" rel="stylesheet">
+	<link href="<?php echo base_url()?>library/css/common.css" rel="stylesheet">
+
+
+ 	<?php
+        $total_url = $_SERVER['PHP_SELF'];
+        $arr_splitted_url = explode('/', $total_url);
+
+        $ctl_name = $arr_splitted_url[count($arr_splitted_url) - 2];
+        $view_name = $arr_splitted_url[count($arr_splitted_url) - 1];
+
+        $filename = 'library/css/'.$ctl_name.'/'.$view_name.'.css';
+        if(file_exists($filename)) {
+	?>
+			<link href="/NEWGENERATION/library/css/<?php echo $ctl_name ?>/<?php echo $view_name?>.css" rel="stylesheet">
+	<?php
+        } 
+    ?>
 
 	<!-- favicon -->
 	<!-- ... -->
@@ -60,10 +76,10 @@
 			if(!$isLogin) {
 			?>
 				<li>
-					<a>가입하기</a>
+					<a href="/NEWGENERATION/Auth/register">가입하기</a>
 				</li>
 				<li>
-					<a>로그인</a>
+					<a href="/NEWGENERATION/Auth/index">로그인</a>
 				</li>
 			<?php
 			} else {
