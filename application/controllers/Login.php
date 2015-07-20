@@ -1,18 +1,19 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Login extends CI_Controller {
+require APPPATH . '/libraries/Common_Controller.php';
+
+class Login extends Common_Controller {
   function __construct () {
     parent::__construct();
+    $this->load->helper('url');
+	$this->load->library('form_validation');
   }
 
-  function index() {
-    $this->getViews('Login/index');
-  }
+  function index () {
+    $this->form_validation->set_rules('login-username', '이메일', 'required|valid_email');
+    $this->form_validation->set_rules('login-password', '비밀번호', 'required');
 
-  function getViews($viewStr) {
-    $this->load->view('_Layout/header.php');
-    $this->load->view($viewStr);
-    $this->load->view('_Layout/footer.php');
-  }
+	$this->getViews('Login/index');
+  } 	
 }

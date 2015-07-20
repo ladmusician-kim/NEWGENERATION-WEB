@@ -14,6 +14,11 @@ class User_model extends CI_Model {
     	return $this->db->get_where('user', array('_id'=>$user_id))->row();
     }
 
+    /* login */
+    function login($username, $password) {
+        $user = $this->db->get_where('user', array('username'=>$username))->row();   
+    }
+
     /* created */
     function create($data) {
         $post_data = array(

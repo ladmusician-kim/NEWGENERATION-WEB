@@ -19,12 +19,18 @@
                                             </span>
                                         </p>
                                         --> 
-                                        <form class="form" action="index.html">
+                                        <?php
+                                            $flashdata = $this->session->flashdata('message');
+                                            if ($flashdata != null) {
+                                                echo $flashdata;                                                
+                                            }
+                                        ?>
+                                        <form class="form" action="/NEWGENERATION/Auth/authentication" method="POST">
                                             <div class="form-group form-group-label">
                                                 <div class="row">
                                                     <div class="col-md-10 col-md-push-1">
                                                         <label class="floating-label" for="login-username">이메일</label>
-                                                        <input class="form-control" id="login-username" type="email">
+                                                        <input class="form-control" id="login-username" type="email" name="login-username">
                                                     </div>
                                                 </div>
                                             </div>
@@ -32,14 +38,14 @@
                                                 <div class="row">
                                                     <div class="col-md-10 col-md-push-1">
                                                         <label class="floating-label" for="login-password">비밀번호</label>
-                                                        <input class="form-control" id="login-password" type="password">
+                                                        <input class="form-control" id="login-password" type="password" name="login-password">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="row">
                                                     <div class="col-md-10 col-md-push-1">
-                                                        <button class="btn btn-block btn-blue waves-button waves-effect waves-light">로그인</button>
+                                                        <button type="submit" class="btn btn-block btn-blue waves-button waves-effect waves-light">로그인</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -60,7 +66,7 @@
                             </div>
                         </div>
                         <div class="clearfix">
-                            <p class="margin-no-top pull-left"><a href="javascript:void(0)">비밀번호 찾기 ?</a></p>
+                            <p class="margin-no-top pull-left"><a href="javascript:void(0)">비밀번호 찾기?</a></p>
                             <p class="margin-no-top pull-right"><a href="javascript:void(0)">가입하기</a></p>
                         </div>
                     </section>
