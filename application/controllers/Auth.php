@@ -43,7 +43,7 @@ class Auth extends NG_Controller {
           redirect('Auth/login');
       }
     } else {
-      $this->getViews('Auth/login', array('returnURL' => $this->input->get('returnURL')));
+      $this->__getViews('Auth/login', array('returnURL' => $this->input->get('returnURL')));
     }
   }
 
@@ -71,7 +71,7 @@ class Auth extends NG_Controller {
       }
 
     } else {
-     $this->getViews('Auth/register');
+     $this->__getViews('Auth/register');
    }
   }
 
@@ -79,5 +79,10 @@ class Auth extends NG_Controller {
   function logout () {
     $this->session->sess_destroy();
     redirect('/Home/index');
+  }
+
+  /* 비밀번호 찾기 */
+  function forget_password () {
+    
   }
 }

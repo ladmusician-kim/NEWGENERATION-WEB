@@ -10,7 +10,7 @@ class Home extends NG_Controller {
 
 	function index() {
 		if ($this->session->userdata('is_login')) {
-			$this->getViews('Home/index');
+			$this->__getViews('Home/index');
 		} else {
 			redirect('/Auth/login?returnURL='.rawurlencode(site_url('/Home/index')));
 		}
