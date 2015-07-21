@@ -79,7 +79,7 @@
 					<a href="/NEWGENERATION/Auth/register">가입하기</a>
 				</li>
 				<li>
-					<a href="/NEWGENERATION/Auth/login?returnURL=<?php echo site_url($_SERVER['PHP_SELF'])?>">로그인</a>
+					<a href="/NEWGENERATION/Auth/login?returnURL=<?php echo rawurlencode(substr($_SERVER['REQUEST_URI'], 14))?>">로그인</a>
 				</li>
 			<?php
 			} else {
