@@ -69,7 +69,7 @@
 				</a>
 			</li>
 		</ul>
-		<a class="header-logo" href="index.html">NEWGENERATION</a>
+		<a class="header-logo" href="/Home/index">NEWGENERATION</a>
 		<ul class="nav nav-list pull-right">
 			<?php
 			$isLogin = $this->session->userdata('is_login');
@@ -79,7 +79,7 @@
 					<a href="/NEWGENERATION/Auth/register">가입하기</a>
 				</li>
 				<li>
-					<a href="/NEWGENERATION/Auth/index">로그인</a>
+					<a href="/NEWGENERATION/Auth/login?returnURL=<?php echo site_url($_SERVER['PHP_SELF'])?>">로그인</a>
 				</li>
 			<?php
 			} else {

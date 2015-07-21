@@ -13,10 +13,26 @@ class User_model extends CI_Model {
     function getbyid($user_id){
     	return $this->db->get_where('user', array('_id'=>$user_id))->row();
     }
+    function add($data) {
+         $input_data = array(
+            'email'     =>  $data['email'],
+            'password'    =>  $data['password'],
+            'created'    =>  date("Y-m-d"),
+            'isdeprecated' => FALSE
+        );
 
-    /* login */
-    function login($username, $password) {
-        $user = $this->db->get_where('user', array('username'=>$username))->row();   
+        $this->db->insert('user', $input_data);
+        $result = $this->db->insert_id();
+
+        if ($result > 0) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+    function get_user_by_email($option) {
+        return $this->db->get_where('user', array ('email' => $option['email']))->row();
+
     }
 
     /* created */

@@ -4,11 +4,17 @@ class NG_Controller extends CI_Controller {
 		parent::__construct();
 	}
 
-	function getViews($viewStr) {
+	function getViews($viewStr, $data = null) {
 		$this->load->view('_Layout/header.php');
 		$this->load->view('_Layout/left_navbar.php');
 		$this->load->view('_Layout/profile_navbar.php');
-		$this->load->view($viewStr);
+
+		if ($data != null) {
+			$this->load->view($viewStr, $data);
+		} else {
+			$this->load->view($viewStr);
+		}
+
 		$this->load->view('_Layout/footer.php');
 	}
 }

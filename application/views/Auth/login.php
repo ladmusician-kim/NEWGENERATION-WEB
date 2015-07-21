@@ -20,20 +20,20 @@
                                         </p>
                                         --> 
                                         
-                                        <form class="form" action="/NEWGENERATION/Auth/authentication" method="POST">
+                                        <form class="form" action="<?=site_url('/Auth/login?returnURL='.rawurlencode($returnURL))?>" method="POST">
                                             <div class="form-group form-group-label">
                                                 <div class="row">
                                                     <div class="col-md-10 col-md-push-1">
-                                                        <label class="floating-label" for="login-username">이메일</label>
-                                                        <input class="form-control" id="login-username" type="email" name="login-username">
+                                                        <label class="floating-label" for="login_email">이메일</label>
+                                                        <input class="form-control" id="login_email" type="email" name="login_email">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group form-group-label">
                                                 <div class="row">
                                                     <div class="col-md-10 col-md-push-1">
-                                                        <label class="floating-label" for="login-password">비밀번호</label>
-                                                        <input class="form-control" id="login-password" type="password" name="login-password">
+                                                        <label class="floating-label" for="login_password">비밀번호</label>
+                                                        <input class="form-control" id="login_password" type="password" name="login_password">
                                                     </div>
                                                 </div>
                                             </div>
@@ -49,7 +49,7 @@
                                                     <div class="col-md-10 col-md-push-1">
                                                         <div class="checkbox checkbox-adv">
                                                             <label for="login-remember">
-                                                                <input class="access-hide" id="login-remember" name="login-remember" type="checkbox">로그인 유지
+                                                                <input class="access-hide" id="login_remember" name="login_remember" type="checkbox">로그인 유지
                                                             </label>
                                                         </div>
                                                     </div>

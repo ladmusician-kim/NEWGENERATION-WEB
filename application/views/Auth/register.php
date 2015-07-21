@@ -19,12 +19,14 @@
                                             </span>
                                         </p>
                                         --> 
-                                        <form class="form" action="/NEWGENERATION/Auth/authentication" method="POST">
+                                        <?php echo validation_errors(); ?>
+                                        <form class="form" action="/NEWGENERATION/Auth/register" method="POST">
                                             <div class="form-group form-group-label">
                                                 <div class="row">
                                                     <div class="col-md-10 col-md-push-1">
                                                         <label class="floating-label" for="register-username">이메일</label>
-                                                        <input class="form-control" id="register-username" type="email" name="register-username">
+                                                        <input class="form-control" id="register-username" type="email" 
+                                                               name="register-username" value="<?php echo set_value('register-username') ?>">
                                                     </div>
                                                 </div>
                                             </div>
@@ -40,7 +42,7 @@
                                                 <div class="row">
                                                     <div class="col-md-10 col-md-push-1">
                                                         <label class="floating-label" for="register-password">비밀번호 확인</label>
-                                                        <input class="form-control" id="register-password" type="password" name="register-password-confirm">
+                                                        <input class="form-control" id="register-password-confirm" type="password" name="register-password-confirm">
                                                     </div>
                                                 </div>
                                             </div>
