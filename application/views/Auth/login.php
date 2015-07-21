@@ -61,8 +61,8 @@
                             </div>
                         </div>
                         <div class="clearfix">
-                            <p class="margin-no-top pull-left"><a href="javascript:void(0)">비밀번호 찾기?</a></p>
-                            <p class="margin-no-top pull-right"><a href="javascript:void(0)">가입하기</a></p>
+                            <p class="margin-no-top pull-left"><a href="<?=site_url('/Auth/forgot_password')?>">비밀번호 찾기?</a></p>
+                            <p class="margin-no-top pull-right"><a href="<?=site_url('/Auth/register')?>">가입하기</a></p>
                         </div>
                     </section>
                 </div>

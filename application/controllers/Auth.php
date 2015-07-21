@@ -82,7 +82,59 @@ class Auth extends NG_Controller {
   }
 
   /* 비밀번호 찾기 */
-  function forget_password () {
-    
+  function forgot_password () {
+    $this->form_validation->set_rules('forgot_email', '이메일', 'required|valid_email');
+
+    $isValidate = $this->form_validation->run();
+
+    if($isValidate) {
+      $input_data = array ('email' => $this->input->post('forgot_email'));
+
+      $user = $this->user_model->get_user_by_email($input_data);
+
+      if ($user != null &&
+          $user->email == $input_data['email']
+         ) {
+          $option = array (
+            email => $user->email,
+            password => $user->password
+          );
+
+          if ($this->send_email($option)) {
+            $this->session->set_flashdata('message', '이메일이 전송되었습니다.');
+            redirect('Auth/login');
+          } else {
+            $this->session->set_flashdata('message', '이메일 전송에 실패하였습니다.');
+            redirect('Auth/forgot_password');
+          }
+      } else {
+          $this->session->set_flashdata('message', '이메일을 잘못입력하셨습니다.');
+          redirect('Auth/forgot_password');
+      }
+    } else {
+      $this->__getViews('Auth/forgot_password');
+    }
+  }
+
+
+
+  function send_email ($option) {
+    try {
+        $this->load->library('email');
+
+        $this->email->initialize(array('mailtype'=>'html'));
+
+        $this->email->from('ladmusician.kim@gmail.com', 'NEWGENERATION MASTER');
+        $this->email->to($option['email']);
+        $this->email->subject('비밀번호를 까먹다니 ㅉㅉ');
+        $this->email->message('<p>당신의 비밀번호는 '. $option['password'].'</p> <a target="_blank" href="http://newgeneration.kr/NEWGENERATION/Auth/login">로그인하기</a>');
+        $this->email->send();
+
+        return TRUE;
+    } catch (Exception $e) {
+        return FALSE;
+    }
+
+      
   }
 }

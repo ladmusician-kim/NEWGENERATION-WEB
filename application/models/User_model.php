@@ -1,6 +1,5 @@
 <?php
 class User_model extends CI_Model {
-   
     function __construct()
     {    	
         parent::__construct();
@@ -12,6 +11,10 @@ class User_model extends CI_Model {
     }
     function getbyid($user_id){
     	return $this->db->get_where('user', array('_id'=>$user_id))->row();
+    }
+    function get_user_by_email($option) {
+        return $this->db->get_where('user', array ('email' => $option['email']))->row();
+
     }
     function add($data) {
          $input_data = array(
@@ -30,25 +33,11 @@ class User_model extends CI_Model {
             return FALSE;
         }
     }
-    function get_user_by_email($option) {
-        return $this->db->get_where('user', array ('email' => $option['email']))->row();
-
-    }
-
-    /* created */
-    function create($data) {
-        $post_data = array(
-            'label'     =>  $data['label'],
-            'number'    =>  $data['num'],
-            'created'    =>  date("Y-m-d"),
-            'updated'    =>  date("Y-m-d"),
-            'eat'    =>  'null',
-            'hit'   =>  0
-        );
-        $this->db->insert('user', $post_data);
-        return $this->db->insert_id();
-    }
-    function countAll() {
-        return $this->db->count_all_result('user');
-    }
 }
+
+
+/*
+foreach($users as $use) {
+    var_dump($user);
+}
+*/
