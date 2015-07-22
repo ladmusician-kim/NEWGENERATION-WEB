@@ -503,4 +503,14 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
-$config['peak_page_cache'] = 
+/*
+|--------------------------------------------------------------------------
+| 부분 웹 페이지 캐슁
+|--------------------------------------------------------------------------
+|
+| 본 캐쉬는 특정한 페이지에 대해서만 web caching을 적용한다. 
+| 값이 없거나 false면 페이지를 캐쉬하지 않는다. 
+| 캐쉬의 지속시간은 5분이다. 
+| 
+*/
+$config['peak_page_cache'] = 'http://newgeneration.kr/NEWGENERATION/Auth/login';

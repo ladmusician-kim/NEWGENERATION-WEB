@@ -20,6 +20,7 @@ class Auth extends NG_Controller {
 
     $isValidate = $this->form_validation->run();
 
+    echo 'test';
     if($isValidate) {
       $input_data = array ('email' => $this->input->post('login_email'));
 
