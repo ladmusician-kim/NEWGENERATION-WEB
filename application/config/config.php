@@ -503,7 +503,4 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
-$config['authentication'] = array(
-	'username' => 'ladmusician.kim@gmail.com',
-	'password' => '8509rja313'
-);
+$config['peak_page_cache'] = 

@@ -62,7 +62,13 @@ class Auth extends NG_Controller {
         );
 
       $rtv = $this->user_model->add($input_data);
-      if($rtv) {
+      if($rtv > 0) {
+        $this->load->model('batch_model');
+        $this->batch_model->add(array (
+          'job_name' => 'notify_email_add_user',
+          'context' => json_encode(array('user_id' => $rtv))
+        ));
+
         $this->session->set_flashdata('message', '회원가입에 성공하였습니다.');
         redirect('Auth/login');
       } else {
@@ -122,9 +128,15 @@ class Auth extends NG_Controller {
     try {
         $this->load->library('email');
 
-        $this->email->initialize(array('mailtype'=>'html'));
+        $config['mailtype'] = 'html';
+        $config['smtp_host'] = 'newgeneration.kr';
+        $config['smtp_user'] = 'admin@newgeneration.kr';
+        $config['smtp_pass'] = '1726836rja';
 
-        $this->email->from('ladmusician.kim@gmail.com', 'NEWGENERATION MASTER');
+        $this->email->initialize($config);
+        //$this->email->initialize(array('mailtype'=>'html'));
+
+        $this->email->from('admin@newgeneration.kr', 'NEWGENERATION MASTER');
         $this->email->to($option['email']);
         $this->email->subject('비밀번호를 까먹다니 ㅉㅉ');
         $this->email->message('<p>당신의 비밀번호는 '. $option['password'].'</p> <a target="_blank" href="http://newgeneration.kr/NEWGENERATION/Auth/login">로그인하기</a>');

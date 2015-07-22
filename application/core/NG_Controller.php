@@ -2,6 +2,9 @@
 class NG_Controller extends CI_Controller {
 	function __construct() {
 		parent::__construct();
+
+		if(!$this->input->is_cli_request())
+			$this->load->library('session');
 	}
 
 	function __getViews($viewStr, $data = null) {

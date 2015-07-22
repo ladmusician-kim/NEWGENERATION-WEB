@@ -27,11 +27,7 @@ class User_model extends CI_Model {
         $this->db->insert('user', $input_data);
         $result = $this->db->insert_id();
 
-        if ($result > 0) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
+        return $result;
     }
 }
 
