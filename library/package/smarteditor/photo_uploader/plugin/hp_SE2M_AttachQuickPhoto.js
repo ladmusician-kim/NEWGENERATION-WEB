@@ -75,13 +75,12 @@ nhn.husky.SE2M_AttachQuickPhoto = jindo.$Class({
 				
 				aPhotoInfo = {
 				    sName : htData.sFileName || "",
-				    sOriginalImageURL : htData.sFileURL,
+				    sOriginalImageURL : "/NEWGENERATION/library/package/smarteditor/" + htData.sFileURL,
 					bNewLine : htData.bNewLine || false 
 				};
 				
 				sContents += this._getPhotoTag(aPhotoInfo);
 			}
-
 			this.oApp.exec("PASTE_HTML", [sContents]); // 위즐 첨부 파일 부분 확인
 		}catch(e){
 			// upload시 error발생에 대해서 skip함
