@@ -21,7 +21,8 @@ class User_model extends CI_Model {
             'email'     =>  $data['email'],
             'password'    =>  $data['password'],
             'created'    =>  date("Y-m-d"),
-            'isdeprecated' => FALSE
+            'isdeprecated' => FALSE,
+            'isadmin'   => FALSE
         );
 
         $this->db->insert('user', $input_data);
