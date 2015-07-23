@@ -12,15 +12,21 @@
 
  	<?php
         $total_url = $_SERVER['PHP_SELF'];
-        $arr_splitted_url = explode('/', $total_url);
+		$arr_splitted_url = explode('/', $total_url);
 
-        $ctl_name = $arr_splitted_url[count($arr_splitted_url) - 2];
-        $view_name = $arr_splitted_url[count($arr_splitted_url) - 1];
+		$ctrl_name = $arr_splitted_url[count($arr_splitted_url) - 2];
+		$view_name = $arr_splitted_url[count($arr_splitted_url) - 1];
+		$filename = "";
 
-        $filename = 'library/css/'.$ctl_name.'/'.$view_name.'.css';
-        if(file_exists($filename)) {
+		if ($ctrl_name == 'index.php') {
+			$filename = 'library/css/'.strtolower($view_name).'/index.css';
+		} else {
+			$filename = 'library/css/'.strtolower($ctrl_name).'/'.strtolower($view_name).'.css';		
+		}
+
+		if(file_exists($filename)) {
 	?>
-			<link href="/NEWGENERATION/library/css/<?php echo $ctl_name ?>/<?php echo $view_name?>.css" rel="stylesheet">
+			<link href="/NEWGENERATION/<?php echo $filename; ?>" rel="stylesheet">
 	<?php
         } 
     ?>
@@ -69,7 +75,7 @@
 				</a>
 			</li>
 		</ul>
-		<a class="header-logo" href="/Home/index">NEWGENERATION</a>
+		<a class="header-logo" href="<?=site_url('/Home/index')?>">NEWGENERATION</a>
 		<ul class="nav nav-list pull-right">
 			<?php
 			$isLogin = $this->session->userdata('is_login');
