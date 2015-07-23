@@ -15,12 +15,13 @@ class Auth extends NG_Controller {
 
   /* 로그인 */
   function login() {
+    $this->__is_logined();
+
     $this->form_validation->set_rules('login_email', '이메일', 'required|valid_email');
     $this->form_validation->set_rules('login_password', '비밀번호', 'required');
 
     $isValidate = $this->form_validation->run();
 
-    echo 'test';
     if($isValidate) {
       $input_data = array ('email' => $this->input->post('login_email'));
 
@@ -34,7 +35,9 @@ class Auth extends NG_Controller {
           $this->session->set_userdata('is_login', true);
 
           $returnURL = $this->input->get('returnURL');
-          if ($returnURL === false) {
+          var_dump($returnURL);
+
+          if ($returnURL === false || $returnURL === "") {
             redirect('Home/index');            
           } 
 
@@ -44,6 +47,9 @@ class Auth extends NG_Controller {
           redirect('Auth/login');
       }
     } else {
+      if ($this->input->get('returnURL') === "") {
+        $this->__getViews('Auth/login');
+      } 
       $this->__getViews('Auth/login', array('returnURL' => $this->input->get('returnURL')));
     }
   }
