@@ -8,68 +8,48 @@
 		<div class="row">
 			<div class="col-lg-6 col-md-10">
 				<section class="content-inner">
-					<h2 class="content-sub-heading">사용자</h2>
+					<!--<h2 class="content-sub-heading">사용자</h2>-->
 					<div class="card-wrap">
 						<div class="card">
 							<div class="card-main">
 								<div class="card-inner">
-									<p class="card-heading">Table with Cards</p>
+									<p class="card-heading">사용자</p>
 									<div class="card-table">
 										<div class="table-responsive">
 											<table class="table table-hover table-stripe" title="Table with Hover and Stripe Rows">
 												<thead>
 													<tr>
-														<th>Lorem ipsum dolor</th>
-														<th>Sit amet consectetur</th>
-														<th>Adipiscing elit duis</th>
+														<th>id</th>
+														<th>이메일</th>
+														<th>로그인</th>
+														<th>관리자</th>
 													</tr>
 												</thead>
 												<tbody>
+												<?php
+													foreach($users as $user) {
+												?>
 													<tr>
-														<td>Id augue sagittis</td>
-														<td>Eleifend metus eget</td>
-														<td>Lacinia eros curabitur</td>
+														<td><?php echo $user->_id ?></td>
+														<td><?php echo $user->email ?></td>
+														<td><?php echo $user->logined ?></td>
+														<td>
+															<?php
+																if($user->isadmin) {
+															?>
+																관리자
+															<?php
+																} else {
+															?>
+																x
+															<?php
+																} 
+														    ?>
+													    </td>
 													</tr>
-													<tr>
-														<td>Ac ultrices tortor</td>
-														<td>Nunc pellentesque est</td>
-														<td>Et velit condimentum</td>
-													</tr>
-													<tr>
-														<td>Convallis etiam sit</td>
-														<td>Amet augue eu</td>
-														<td>Turpis tempor consectetur</td>
-													</tr>
-													<tr>
-														<td>Suspendisse potenti proin</td>
-														<td>Molestie odio volutpat</td>
-														<td>Risus tristique euismod</td>
-													</tr>
-													<tr>
-														<td>Vitae eu felis</td>
-														<td>Donec ac interdum</td>
-														<td>Purus ac vestibulum</td>
-													</tr>
-													<tr>
-														<td>Enim donec venenatis</td>
-														<td>Pellentesque ante non</td>
-														<td>Faucibus suspendisse potenti</td>
-													</tr>
-													<tr>
-														<td>Cras egestas ac</td>
-														<td>Nibh at ornare</td>
-														<td>Aliquam quis sapien</td>
-													</tr>
-													<tr>
-														<td>Et est imperdiet</td>
-														<td>Tempus proin viverra</td>
-														<td>Semper felis iaculis</td>
-													</tr>
-													<tr>
-														<td>Sagittis ex luctus</td>
-														<td>A duis mollis</td>
-														<td>Nulla non tristique</td>
-													</tr>
+												<?php
+													}
+												?>
 												</tbody>
 											</table>
 										</div>

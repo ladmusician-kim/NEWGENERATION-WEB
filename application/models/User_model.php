@@ -48,8 +48,33 @@ class User_model extends CI_Model {
         $user->logined = date("Y-m-d H:i:sa");
         $this->db->update('user', $user, array('_id' => $user->_id));   
     }
-}
 
+
+
+
+
+
+
+
+    /* ngTable */
+    function get_users($sorting, $filter, $page = 1, $per_page = 10) {
+        $base_dto = new BASE_DTO;
+        
+        if ($page === 1) {
+            $this->db->limit($per_page);
+            
+        } else {
+            $this->db->limit($per_page, ($page - 1) * $per_page);            
+        }
+
+
+        $base_dto->set_value($this->db->get('user')->result());  
+        return $base_dto;
+    }
+
+
+    
+}
 
 /*
 foreach($users as $use) {

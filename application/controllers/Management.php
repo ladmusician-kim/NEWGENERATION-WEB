@@ -13,7 +13,9 @@ class Management extends NG_Controller {
 
 		//$users = $this->user_model->gets();
 		//echo $this->table->generate($users);
-		$this->__get_mg_views('Management/index');		
+		$result = $this->user_model->get_users(null, null, 1, 10);
+		//var_dump(json_encode($users));
+		$this->__get_mg_views('Management/index', array ('users' => $result->return_body));		
 	}
 
 	function user () {
