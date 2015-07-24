@@ -9,6 +9,9 @@ class User_model extends CI_Model {
     function gets(){
     	return $this->db->query("SELECT * FROM user ORDER BY _id DESC")->result();
     }
+    function get_all_user_count () {
+         return $this->db->count_all_results('user');
+    }
     function getbyid($user_id){
     	return $this->db->get_where('user', array('_id'=>$user_id))->row();
     }
@@ -29,6 +32,21 @@ class User_model extends CI_Model {
         $result = $this->db->insert_id();
 
         return $result;
+    }
+    function edit($data) {
+        $update_data = array(
+            'email'     =>  $data['email'],
+            'password'    =>  $data['password'],
+            'updated'    =>  date("Y-m-d"),
+            'isdeprecated' => $data['isdeprecated'],
+            'isadmin'   => $data['isadmin']
+        );
+
+        $this->db->update('user', $update_data, array('_id' => $data['id']));
+    }
+    function logined($user) {
+        $user->logined = date("Y-m-d H:i:sa");
+        $this->db->update('user', $user, array('_id' => $user->_id));   
     }
 }
 

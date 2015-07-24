@@ -30,6 +30,21 @@ class NG_Controller extends CI_Controller {
 		$this->load->view('_Layout/footer.php');
 	}
 
+	function __get_mg_views($viewStr, $data = null) {
+		$this->load->view('_Layout/header.php');
+		$this->load->view('_Layout/left_mg_nav.php');
+		$this->load->view('_Layout/profile_navbar.php');
+
+		if ($data != null) {
+			$this->load->view($viewStr, $data);
+		} else {
+			$this->load->view($viewStr);
+		}
+
+		$this->load->view('_Layout/footer.php');
+	}
+
+
 	function __require_login($return_url = "") {
 		// 로그인이 되어 있지 않다면 로그인 페이지로 리다이렉션
 	    if(!$this->session->userdata('is_login')){

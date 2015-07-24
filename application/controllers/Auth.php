@@ -27,21 +27,9 @@ class Auth extends NG_Controller {
 
       $user = $this->user_model->get_user_by_email($input_data);
 
-      if ($user != null &&
-          $user->email == $input_data['email'] &&
-          password_verify($this->input->post('login_password'), $user->password)
-         ) {
-          $this->session->set_flashdata('message', '로그인에 성공하였습니다.');
-          $this->session->set_userdata('is_login', true);
-
-          $returnURL = $this->input->get('returnURL');
-          var_dump($returnURL);
-
-          if ($returnURL === false || $returnURL === "") {
-            redirect('Home/index');            
-          } 
-
-          redirect($returnURL);
+      // db 정보와 확인
+      if ($user != null && $user->email == $input_data['email'] && password_verify($this->input->post('login_password'), $user->password)) {
+          $this->handle_login($user);
       } else {
           $this->session->set_flashdata('message', '로그인에 실패하였습니다.');
           redirect('Auth/login');
@@ -153,7 +141,26 @@ class Auth extends NG_Controller {
     } catch (Exception $e) {
         return FALSE;
     }
+  }
 
-      
+  function handle_login ($user) {
+    $this->user_model->logined($user);
+    
+    $this->session->set_flashdata('message', '로그인에 성공하였습니다.');
+    $this->session->set_userdata('is_login', TRUE);
+    $this->session->set_userdata('is_login', FALSE);
+
+    if ($user->isadmin) {
+      $this->session->set_userdata('is_login', TRUE);
+      redirect('/Management/index');
+    }
+
+    $returnURL = $this->input->get('returnURL');
+
+    if ($returnURL === false || $returnURL === "") {
+      redirect('Home/index');            
+    } 
+
+    redirect($returnURL);
   }
 }

@@ -8,7 +8,7 @@
 
 	<!-- css -->
 	<link href="<?php echo base_url()?>library/css/common.css" rel="stylesheet">
-
+	<!--<link href="<?php echo base_url()?>library/package/material/css/base.min.css" rel="stylesheet">-->
 
  	<?php
         $total_url = $_SERVER['PHP_SELF'];
