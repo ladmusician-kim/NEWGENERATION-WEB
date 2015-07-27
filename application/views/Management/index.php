@@ -58,10 +58,14 @@
 								<div class="card-action">
 									<ul class="nav nav-list pull-right">
 										<li>
-											<a href="javascript:void(0)"><span class="icon">chevron_left</span></a>
+											<a <?php if ($page == 1) echo "class='ng-disabled-btn'"; ?>
+											 href="/NEWGENERATION/Management/index?page=<?php echo $page-1 ?>&perPage=<?php echo $perPage?>">
+											 	<span class="icon">chevron_left</span>
+										 	</a>
 										</li>
 										<li>
-											<a href="javascript:void(0)"><span class="icon">chevron_right</span></a>
+											<a <?php if ($page == $last_page) echo "class='ng-disabled-btn'"; ?> 
+											href="/NEWGENERATION/Management/index?page=<?php echo $page+1 ?>&perPage=<?php echo $perPage?>"><span class="icon">chevron_right</span></a>
 										</li>
 									</ul>
 								</div>

@@ -9286,3 +9286,16 @@ input[type="checkbox"]:checked + .switch-toggle-yellow:after, input[type="radio"
     right: 240px;
   }
 }
+
+
+
+
+
+
+
+
+/* dj */
+.ng-disabled-btn {
+  pointer-events: none;
+  cursor: default;
+}

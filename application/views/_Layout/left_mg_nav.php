@@ -5,6 +5,9 @@
 					<a class="menu-logo" href="index.html">NEWGENERATION</a>
 					<ul class="nav">
 						<li>
+							<a href="<?=site_url('/Management/notice')?>">공지사항</a>
+						</li>
+						<li>
 							<a href="<?=site_url('/Management/user')?>">사용자</a>
 						</li>
 					</ul>
