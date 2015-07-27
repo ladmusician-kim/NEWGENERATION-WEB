@@ -148,10 +148,11 @@ class Auth extends NG_Controller {
     
     $this->session->set_flashdata('message', '로그인에 성공하였습니다.');
     $this->session->set_userdata('is_login', TRUE);
-    $this->session->set_userdata('is_login', FALSE);
+    $this->session->set_userdata('user_id', $user->_id);
+    //$this->session->set_userdata('is_login', FALSE);
 
     if ($user->isadmin) {
-      $this->session->set_userdata('is_login', TRUE);
+      $this->session->set_userdata('is_admin', TRUE);
       redirect('/Management/index');
     }
 

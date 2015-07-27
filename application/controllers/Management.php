@@ -6,7 +6,7 @@ class Management extends NG_Controller {
 		parent::__construct();
 		$this->load->model('user_model');
 		$this->load->library('form_validation');
-		$this->__require_login();
+		$this->__require_admin_login();
 	}
 
 	function index () {
@@ -47,6 +47,10 @@ class Management extends NG_Controller {
 
 	function notice () {
 		$this->__get_mg_views('Management/notice');
+	}
+
+	function create_notice () {
+		$this->__get_mg_views('Management/create_notice');	
 	}
 
 	function upload() {

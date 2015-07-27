@@ -55,6 +55,23 @@ class NG_Controller extends CI_Controller {
 	    }
 	}
 
+	function __require_admin_login($return_url = "") {
+		// 로그인이 되어 있지 않다면 로그인 페이지로 리다이렉션
+	    if(!$this->session->userdata('is_login')){
+	    	if ($return_url == "") {
+		        redirect('/Auth/login');	    		
+	    	}
+	        redirect('/Auth/login?returnURL='.rawurlencode($return_url));
+	    }
+
+	     if (!$this->session->userdata('is_admin')) {
+	    	if ($return_url == "") {
+		        redirect('/Home/index');    		
+	    	}
+	        redirect(rawurlencode($return_url));
+	    }
+	}
+
 	function __is_logined($return_url = "") {
 		// 로그인이 되어 있지 않다면 로그인 페이지로 리다이렉션
 	    if($this->session->userdata('is_login')){

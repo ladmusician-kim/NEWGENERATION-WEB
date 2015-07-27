@@ -36,6 +36,6 @@
 	?>
 		<script src="/NEWGENERATION/<?php echo $filename; ?>"></script>
 <?php
-} 
+	} 
 ?>
 </body>
