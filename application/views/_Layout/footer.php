@@ -36,6 +36,13 @@
 	?>
 		<script src="/NEWGENERATION/<?php echo $filename; ?>"></script>
 <?php
+	}
+
+
+	if(strpos($filename, 'create')) {
+?>
+		<script src="/NEWGENERATION/library/package/smarteditor/js/HuskyEZCreator.js"></script>
+<?php
 	} 
 ?>
 </body>
