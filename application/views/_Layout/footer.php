@@ -15,6 +15,7 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/NEWGENERATION/library/js/ajaxBody.js"></script>
 <!--<script src="/NEWGENERATION/library/package/smarteditor/js/HuskyEZCreator.js"></script>-->
 <script src="/NEWGENERATION/library/js/app.js"></script>
 

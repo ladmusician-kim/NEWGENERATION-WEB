@@ -8,19 +8,9 @@ class Home extends NG_Controller {
 		$this->load->helper('url');
 	}
 
-	function index() {
-		$this->__require_login();
-		$this->__getViews('Home/index');
-		/*
-		if ($this->session->userdata('is_login')) {
-
-		} else {
-			redirect('/Auth/login?returnURL='.rawurlencode(site_url('/Home/index')));
-		}
-		*/
+	function index () {
+		$this->__get_mg_views('Management/index');
 	}
-
-
 
 	function get_notices () {
 		$this->load->model('notice_model');
@@ -37,7 +27,7 @@ class Home extends NG_Controller {
 
 		$last_page = ceil($total_count / $perPage);
 
-		$this->__get_mg_views('Partial/card_list', 
+		$this->__get_partial_view('Partial/card_list', 
 			array ('notices' => $notices->return_body, 'page' => $page, 'perPage' => $perPage, 'last_page' => $last_page));	
 	}
 }
