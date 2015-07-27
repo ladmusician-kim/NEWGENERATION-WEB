@@ -17,10 +17,10 @@ class User_model extends CI_Model {
     }
     function get_user_by_email($option) {
         return $this->db->get_where('user', array ('email' => $option['email']))->row();
-
     }
     function add($data) {
          $input_data = array(
+            'username'  => explode("@", $data['email'])[0],
             'email'     =>  $data['email'],
             'password'    =>  $data['password'],
             'created'    =>  date("Y-m-d"),

@@ -58,12 +58,6 @@ class Auth extends NG_Controller {
 
       $rtv = $this->user_model->add($input_data);
       if($rtv > 0) {
-        $this->load->model('batch_model');
-        $this->batch_model->add(array (
-          'job_name' => 'notify_email_add_user',
-          'context' => json_encode(array('user_id' => $rtv))
-        ));
-
         $this->session->set_flashdata('message', '회원가입에 성공하였습니다.');
         redirect('Auth/login');
       } else {
@@ -144,12 +138,14 @@ class Auth extends NG_Controller {
   }
 
   function handle_login ($user) {
+    $username = explode('@', $user->email)[0];
     $this->user_model->logined($user);
     
     $this->session->set_flashdata('message', '로그인에 성공하였습니다.');
-    $this->session->set_userdata('is_login', TRUE);
     $this->session->set_userdata('user_id', $user->_id);
-    //$this->session->set_userdata('is_login', FALSE);
+    $this->session->set_userdata('username', $username);
+    $this->session->set_userdata('is_login', TRUE);
+    $this->session->set_userdata('is_admin', FALSE);
 
     if ($user->isadmin) {
       $this->session->set_userdata('is_admin', TRUE);
