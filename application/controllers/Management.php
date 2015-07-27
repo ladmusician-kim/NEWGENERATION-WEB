@@ -49,7 +49,7 @@ class Management extends NG_Controller {
 
 	/* notice */
 	function notice () {
-		$this->load->model('user_model');
+		$this->load->model('notice_model');
 		$page = $this->input->get('page');
 		$per_page = $this->input->get('perPage');
 
@@ -66,11 +66,18 @@ class Management extends NG_Controller {
 		$this->__get_mg_views('Management/notice', 
 			array ('notices' => $notices->return_body, 'page' => $page, 'perPage' => $perPage, 'last_page' => $last_page));	
 	}
+	function notice_detail () {
+		$this->load->model('notice_model');
+		$notice_id = $this->input->get('noticeid');
+		$notice = $this->notice_model->get_by_id($notice_id);
+
+		$this->__get_mg_views('Management/notice_detail', array('notice' => $notice));
+	}
 	function notice_create () {
-		$this->__get_mg_views('Management/create_notice');	
+		$this->__get_mg_views('Management/notice_create');	
 	}
 	function notice_submitted () {
-		$this->load->model('user_model');
+		$this->load->model('notice_model');
 		$input_data = array (
             'title' => $this->input->post('title'),
             'content' => $this->input->post('content')

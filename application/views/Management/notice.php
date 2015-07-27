@@ -32,11 +32,15 @@
 													foreach($notices as $item) {
 												?>
 													<tr>
-														<td><?php echo $item->_id ?></td>
-														<td><?php echo $item->title ?></td>
+														<td><?php echo $item->notice_id ?></td>
+														<td>
+															<a href="/NEWGENERATION/Management/notice_detail?noticeid=<?php echo $item->notice_id ?>">
+																<?php echo $item->title ?>
+															</a>
+														</td>
 														<td><?php echo $item->created ?></td>
 														<td>
-															<?php echo $item->email ?>
+															<?php echo $item->username ?>
 													    </td>
 													</tr>
 												<?php
@@ -63,6 +67,10 @@
 										</li>
 									</ul>
 								</div>
+								<div class="form-group-btn text-center">
+									<a class="btn btn-blue waves-button waves-light waves-effect"
+										href="/NEWGENERATION/Management/notice_create">공지사항 작성하기</a>
+   	                        	</div>
 							</div>
 						</div>
 					</div>

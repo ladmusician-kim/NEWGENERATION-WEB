@@ -23,8 +23,8 @@ class Notice_model extends CI_Model {
     function get_all_count () {
          return $this->db->count_all_results('notice');
     }
-    function getbyid($user_id){
-        return $this->db->get_where('notice', array('_id'=>$user_id))->row();
+    function get_by_id($notice_id){
+        return $this->db->get_where('notice', array('notice_id'=>$notice_id))->row();
     }
     function get_items($sorting, $filter, $page = 1, $per_page = 10) {
         $base_dto = new BASE_DTO;
