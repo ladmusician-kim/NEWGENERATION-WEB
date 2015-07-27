@@ -2,7 +2,7 @@
 		<div class="menu-scroll">
 			<div class="menu-wrap">
 				<div class="menu-content">
-					<a class="menu-logo" href="index.html">NEWGENERATION</a>
+					<a class="menu-logo" href="<?=site_url('/Home/index')?>">NEWGENERATION</a>
 					<ul class="nav">
 						<li>
 							<a href="<?=site_url('/Management/notice')?>">공지사항</a>

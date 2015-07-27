@@ -27,6 +27,7 @@ class Management extends NG_Controller {
 			array ('users' => $users->return_body, 'page' => $page, 'perPage' => $perPage, 'last_page' => $last_page));		
 	}
 
+	/* user */
 	function user () {
 		$page = $this->input->get('page');
 		$per_page = $this->input->get('perPage');
@@ -45,15 +46,46 @@ class Management extends NG_Controller {
 			array ('users' => $users->return_body, 'page' => $page, 'perPage' => $perPage, 'last_page' => $last_page));	
 	}
 
-	function notice () {
-		$this->__get_mg_views('Management/notice');
-	}
 
-	function create_notice () {
+	/* notice */
+	function notice () {
+		$this->load->model('user_model');
+		$page = $this->input->get('page');
+		$per_page = $this->input->get('perPage');
+
+		if ($page === null || $perPage === null) {
+			$page = 1;
+			$perPage = 10;
+		}		
+
+		$notices = $this->notice_model->get_items(null, null, $page, $perPage);
+		$total_count = $this->notice_model->get_all_count();
+
+		$last_page = ceil($total_count / $perPage);
+
+		$this->__get_mg_views('Management/notice', 
+			array ('notices' => $notices->return_body, 'page' => $page, 'perPage' => $perPage, 'last_page' => $last_page));	
+	}
+	function notice_create () {
 		$this->__get_mg_views('Management/create_notice');	
 	}
+	function notice_submitted () {
+		$this->load->model('user_model');
+		$input_data = array (
+            'title' => $this->input->post('title'),
+            'content' => $this->input->post('content')
+        );
 
-	function upload() {
-		var_dump($this->input->post('smarteditor'));
+		$this->load->model('notice_model');
+		$rtv = $this->notice_model->add($input_data);
+
+		if ($rtv != null && $rtv > 0) {
+			$this->session->set_flashdata('message', '공지사항을 성공적으로 저장하였습니다.');
+	      	redirect('Management/notice');
+		} else {
+			$this->session->set_flashdata('message', '공지사항을 저장하는데 오류가 발생했습니다.');
+	      	redirect('Management/notice_create');
+		}
 	}
 }
+

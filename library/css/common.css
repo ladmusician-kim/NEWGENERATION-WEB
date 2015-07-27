@@ -6197,10 +6197,12 @@ legend + .form-group {
 
 .form-group-btn {
   margin-bottom: 24px;
+
 }
 .form-group-btn .btn {
-  margin-top: 24px;
   margin-right: 16px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .form-help {
