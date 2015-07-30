@@ -89,4 +89,31 @@ class NG_Controller extends CI_Controller {
 	        redirect($return_url);
 	    }
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/* handler */
+	function handle_date ($date) {
+		// 00/00/2015 -> 2015-00-00
+		$arr_date = explode('/', $date);
+		return $arr_date[2].'-'.$arr_date[1].'-'.$arr_date[0];
+	}
 }

@@ -22,6 +22,8 @@
                                                 <tr>
                                                     <th>id</th>
                                                     <th>제목</th>
+                                                    <th>시작일</th>
+                                                    <th>마감일</th>
                                                     <th>생성일</th>
                                                     <th>담당자</th>
                                                 </tr>
@@ -37,6 +39,8 @@
                                                                 <?php echo $item->title ?>
                                                             </a>
                                                         </td>
+                                                        <td><?php echo $item->start_date ?></td>
+                                                        <td><?php echo $item->end_date ?></td>
                                                         <td><?php echo $item->created ?></td>
                                                         <td>
                                                             <?php echo $item->username ?>

@@ -61,8 +61,8 @@ class Management extends NG_Controller {
 		$input_data = array (
 			'title' => $this->input->post('title'),
 			'content' => $this->input->post('content'),
-			'start_date' => $this->input->post('start_date'),
-			'end_date' => $this->input->post('end_date'),
+			'start_date' =>$this->handle_date($this->input->post('start_date')),
+			'end_date' => $this->handle_date($this->input->post('end_date')),
 			'admin_userid' => $this->input->post('admin_userid')
 		);
 
@@ -71,10 +71,10 @@ class Management extends NG_Controller {
 
 		if ($rtv != null && $rtv > 0) {
 			$this->session->set_flashdata('message', '프로젝트를 성공적으로 저장하였습니다.');
-			redirect('Management/notice');
+			redirect('Management/project');
 		} else {
 			$this->session->set_flashdata('message', '프로젝트를 저장하는데 오류가 발생했습니다.');
-			redirect('Management/project');
+			redirect('Management/project_create');
 		}
 	}
 
