@@ -5,6 +5,9 @@
 					<a class="menu-logo" href="<?=site_url('/Home/index')?>">NEWGENERATION</a>
 					<ul class="nav">
 						<li>
+							<a href="<?=site_url('/Management/project')?>">프로젝트</a>
+						</li>
+						<li>
 							<a href="<?=site_url('/Management/notice')?>">공지사항</a>
 						</li>
 						<li>
@@ -14,7 +17,7 @@
 					<hr>
 					<ul class="nav">
 						<li>
-							<a href="ui-button.html">Buttons</a>
+							<a href="<?=site_url('/Management/contact')?>">문의사항</a>
 						</li>
 						<li>
 							<a href="ui-form.html">Form Elements</a>

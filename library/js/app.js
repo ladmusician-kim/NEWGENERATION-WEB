@@ -78,7 +78,7 @@
 			weekdaysFull: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
 			weekdaysShort: ['S', 'M', 'T', 'W', 'T', 'F', 'S']
 		});
-		
+
 		var datepickerApi = datepicker.pickadate('picker');
 
 		datepickerApi.on({
@@ -260,7 +260,7 @@
 			mReset();
 		};
 	});
-	
+
 	mReset = function () {
 		var $bd = $('body');
 

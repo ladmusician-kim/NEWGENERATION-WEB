@@ -15,9 +15,12 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 <script src="/NEWGENERATION/library/js/ajaxBody.js"></script>
 <!--<script src="/NEWGENERATION/library/package/smarteditor/js/HuskyEZCreator.js"></script>-->
-<script src="/NEWGENERATION/library/js/app.js"></script>
+<!--<script src="/NEWGENERATION/library/js/app.js"></script>-->
+<script src="<?php echo base_url()?>library/package/material/js/base.min.js"></script>
+
 
 <?php
 	$total_url = $_SERVER['PHP_SELF'];
@@ -44,6 +47,14 @@
 ?>
 		<script src="/NEWGENERATION/library/package/smarteditor/js/HuskyEZCreator.js"></script>
 <?php
+		if (strpos($filename, 'project_create')) {
+?>
+			<script src="<?php echo base_url()?>library/package/material/js/project.js"></script>
+			<!--<script src="http://daemonite.github.io/material/js/project.min.js"></script>
+<?php
+		}
+
 	} 
 ?>
+
 </body>
