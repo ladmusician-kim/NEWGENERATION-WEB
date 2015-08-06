@@ -27,6 +27,57 @@ class Management extends NG_Controller {
 			array ('users' => $users->return_body, 'page' => $page, 'perPage' => $perPage, 'last_page' => $last_page));		
 	}
 
+	/* 프로젝트 */
+	function project () {
+		$this->load->model('project_model');
+		$page = $this->input->get('page');
+		$per_page = $this->input->get('perPage');
+
+		if ($page === null || $perPage === null) {
+			$page = 1;
+			$perPage = 10;
+		}
+
+		$projects = $this->project_model->get_items(null, null, $page, $perPage);
+		$total_count = $this->project_model->get_all_count();
+
+		$last_page = ceil($total_count / $perPage);
+
+		$this->__get_mg_views('Management/project',
+			array ('projects' => $projects->return_body, 'page' => $page, 'perPage' => $perPage, 'last_page' => $last_page));
+	}
+	function project_detail () {
+		$this->load->model('contact_model');
+		$contact_id = $this->input->get('contactid');
+		$contact = $this->contact_model->get_by_id($contact_id);
+
+		$this->__get_mg_views('Management/contact_detail', array('contact' => $contact));
+	}
+	function project_create () {
+		$this->__get_mg_views('Management/project_create');
+	}
+	function project_submitted () {
+		$this->load->model('notice_model');
+		$input_data = array (
+			'title' => $this->input->post('title'),
+			'content' => $this->input->post('content'),
+			'start_date' =>$this->handle_date($this->input->post('start_date')),
+			'end_date' => $this->handle_date($this->input->post('end_date')),
+			'admin_userid' => $this->input->post('admin_userid')
+		);
+
+		$this->load->model('project_model');
+		$rtv = $this->project_model->add($input_data);
+
+		if ($rtv != null && $rtv > 0) {
+			$this->session->set_flashdata('message', '프로젝트를 성공적으로 저장하였습니다.');
+			redirect('Management/project');
+		} else {
+			$this->session->set_flashdata('message', '프로젝트를 저장하는데 오류가 발생했습니다.');
+			redirect('Management/project_create');
+		}
+	}
+
 	/* user */
 	function user () {
 		$page = $this->input->get('page');
@@ -44,6 +95,33 @@ class Management extends NG_Controller {
 
 		$this->__get_mg_views('Management/user', 
 			array ('users' => $users->return_body, 'page' => $page, 'perPage' => $perPage, 'last_page' => $last_page));	
+	}
+
+	/* 문의사항 */
+	function contact () {
+		$this->load->model('contact_model');
+		$page = $this->input->get('page');
+		$per_page = $this->input->get('perPage');
+
+		if ($page === null || $perPage === null) {
+			$page = 1;
+			$perPage = 10;
+		}
+
+		$contacts = $this->contact_model->get_items(null, null, $page, $perPage);
+		$total_count = $this->contact_model->get_all_count();
+
+		$last_page = ceil($total_count / $perPage);
+
+		$this->__get_mg_views('Management/contact',
+			array ('contacts' => $contacts->return_body, 'page' => $page, 'perPage' => $perPage, 'last_page' => $last_page));
+	}
+	function contact_detail () {
+		$this->load->model('contact_model');
+		$contact_id = $this->input->get('contactid');
+		$contact = $this->contact_model->get_by_id($contact_id);
+
+		$this->__get_mg_views('Management/contact_detail', array('contact' => $contact));
 	}
 
 

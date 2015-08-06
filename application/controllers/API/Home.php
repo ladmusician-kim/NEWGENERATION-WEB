@@ -17,7 +17,7 @@ class Home extends NG_Controller {
 		$page = $this->input->get('page');
 		$per_page = $this->input->get('perPage');
 
-		if ($page === null || $perPage === null) {
+		if ($page === null || $per_page === null) {
 			$page = 1;
 			$perPage = 10;
 		}		

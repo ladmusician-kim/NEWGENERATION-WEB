@@ -6,7 +6,7 @@
 	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-6 col-md-10">
+			<div class="col-lg-10 col-lg-offset-1 col-md-10">
 				<section class="content-inner">
 					<!--<h2 class="content-sub-heading">사용자</h2>-->
 					<div class="card-wrap">
@@ -20,6 +20,7 @@
 												<thead>
 													<tr>
 														<th>id</th>
+														<th>username</th>
 														<th>이메일</th>
 														<th>로그인</th>
 														<th>관리자</th>
@@ -31,6 +32,7 @@
 												?>
 													<tr>
 														<td><?php echo $user->_id ?></td>
+														<td><?php echo $user->username ?></td>
 														<td><?php echo $user->email ?></td>
 														<td><?php echo $user->logined ?></td>
 														<td>
@@ -41,7 +43,7 @@
 															<?php
 																} else {
 															?>
-																x
+																일반
 															<?php
 																} 
 														    ?>

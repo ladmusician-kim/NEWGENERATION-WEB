@@ -7,8 +7,8 @@
 	<title>NEWGENERATION</title>
 
 	<!-- css -->
+	<link href="<?php echo base_url()?>library/package/material/css/base.min.css" rel="stylesheet">
 	<link href="<?php echo base_url()?>library/css/common.css" rel="stylesheet">
-	<!--<link href="<?php echo base_url()?>library/package/material/css/base.min.css" rel="stylesheet">-->
 
  	<?php
         $total_url = $_SERVER['PHP_SELF'];
@@ -27,8 +27,14 @@
 		if(file_exists($filename)) {
 	?>
 			<link href="/NEWGENERATION/<?php echo $filename; ?>" rel="stylesheet">
+
 	<?php
-        } 
+        }
+		if (strpos($filename, 'project_create')) {
+	?>
+			<link href="http://daemonite.github.io/material/css/project.min.css" rel="stylesheet">
+	<?php
+		}
     ?>
 
 	<!-- favicon -->
