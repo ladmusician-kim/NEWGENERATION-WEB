@@ -116,4 +116,8 @@ class NG_Controller extends CI_Controller {
 		$arr_date = explode('/', $date);
 		return $arr_date[2].'-'.$arr_date[1].'-'.$arr_date[0];
 	}
+	function hadle_short_date($date) {
+		// 2015-08-03 00:00:00
+		return substr($date, 0, 10);
+	}
 }

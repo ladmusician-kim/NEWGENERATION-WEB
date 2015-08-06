@@ -33,18 +33,24 @@ class Management extends NG_Controller {
 		$page = $this->input->get('page');
 		$per_page = $this->input->get('perPage');
 
-		if ($page === null || $perPage === null) {
+		if ($page === null || $per_page === null) {
 			$page = 1;
-			$perPage = 10;
+			$per_page = 10;
 		}
 
-		$projects = $this->project_model->get_items(null, null, $page, $perPage);
+		$projects = $this->project_model->get_items(null, null, $page, $per_page);
 		$total_count = $this->project_model->get_all_count();
 
-		$last_page = ceil($total_count / $perPage);
+		$last_page = ceil($total_count / $per_page);
+
+		foreach($projects->return_body as $project) {
+			$project->updated = $this->hadle_short_date($project->updated);
+			$project->start_date = $this->hadle_short_date($project->start_date);
+			$project->end_date = $this->hadle_short_date($project->end_date);
+		}
 
 		$this->__get_mg_views('Management/project',
-			array ('projects' => $projects->return_body, 'page' => $page, 'perPage' => $perPage, 'last_page' => $last_page));
+			array ('projects' => $projects->return_body, 'page' => $page, 'perPage' => $per_page, 'last_page' => $last_page));
 	}
 	function project_detail () {
 		$this->load->model('contact_model');

@@ -41,7 +41,7 @@
                                                         </td>
                                                         <td><?php echo $item->start_date ?></td>
                                                         <td><?php echo $item->end_date ?></td>
-                                                        <td><?php echo $item->created ?></td>
+                                                        <td><?php echo $item->updated ?></td>
                                                         <td>
                                                             <?php echo $item->username ?>
                                                         </td>

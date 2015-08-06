@@ -10,6 +10,7 @@ class Project_model extends CI_Model {
             'summary'     =>  $data['summary'],
             'content'    =>  $data['content'],
             'created'    =>  date("Y-m-d"),
+            'updated'    =>  date("Y-m-d"),
             'start_date'    =>  $data['start_date'],
             'end_date'    =>  $data['end_date'],
             'create_userid' => $this->session->userdata('user_id'),
