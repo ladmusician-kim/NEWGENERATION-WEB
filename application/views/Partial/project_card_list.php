@@ -22,7 +22,7 @@ foreach($projects as $item) {
                             <a href="javascript:void(0)"><i class="material-icons">favorite_border</i></a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)"><i class="material-icons">cloud_download</i></a>
+                            <a href="javascript:void(0)"><i class="material-icons">share</i></a>
                         </li>
                     </ul>
                 </div>
