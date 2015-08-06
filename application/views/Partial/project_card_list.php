@@ -17,26 +17,12 @@ foreach($projects as $item) {
                     </p>
                 </div>
                 <div class="card-action">
-                    <ul class="nav nav-list pull-left">
+                    <ul class="nav nav-list pull-right">
                         <li>
-                            <a href="javascript:void(0)"><span class="icon">add</span></a>
+                            <a href="javascript:void(0)"><i class="material-icons">favorite_border</i></a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)"><span class="icon">delete</span></a>
-                        </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown"><span class="icon">settings</span></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="javascript:void(0)"><span class="icon margin-right-half">loop</span>&nbsp;Lorem Ipsum</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><span class="icon margin-right-half">replay</span>&nbsp;Consectetur Adipiscing</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><span class="icon margin-right-half">shuffle</span>&nbsp;Sed Ornare</a>
-                                </li>
-                            </ul>
+                            <a href="javascript:void(0)"><i class="material-icons">cloud_download</i></a>
                         </li>
                     </ul>
                 </div>

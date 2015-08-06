@@ -53,11 +53,11 @@ class Management extends NG_Controller {
 			array ('projects' => $projects->return_body, 'page' => $page, 'perPage' => $per_page, 'last_page' => $last_page));
 	}
 	function project_detail () {
-		$this->load->model('contact_model');
-		$contact_id = $this->input->get('contactid');
-		$contact = $this->contact_model->get_by_id($contact_id);
+		$this->load->model('project_model');
+		$project_id = $this->input->get('projectid');
+		$project = $this->project_model->get_by_id($project_id);
 
-		$this->__get_mg_views('Management/contact_detail', array('contact' => $contact));
+		$this->__get_mg_views('Management/project_detail', array('item' => $project));
 	}
 	function project_create () {
 		$this->__get_mg_views('Management/project_create');

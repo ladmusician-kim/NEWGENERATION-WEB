@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fad7bb18-16cc-4842-bd40-461c62e93d43" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/Partial/project_card_list.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/application/views/Partial/card_list.php" afterPath="$PROJECT_DIR$/application/views/Partial/notice_card_list.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/API/Home.php" afterPath="$PROJECT_DIR$/application/controllers/API/Home.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Management.php" afterPath="$PROJECT_DIR$/application/controllers/Management.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/core/NG_Controller.php" afterPath="$PROJECT_DIR$/application/core/NG_Controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/js/home/index.js" afterPath="$PROJECT_DIR$/library/js/home/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_Layout/header.php" afterPath="$PROJECT_DIR$/application/views/_Layout/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/Partial/project_card_list.php" afterPath="$PROJECT_DIR$/application/views/Partial/project_card_list.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/Management/project_detail.php" afterPath="$PROJECT_DIR$/application/views/Management/project_detail.php" />
     </list>
     <ignored path="NEWGENERATION-WEB.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,82 +27,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/Home/index.php">
+      <file leaf-file-name="Management.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/Management.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.375">
-              <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/library/js/home/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="notice_card_list.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/Partial/notice_card_list.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.0">
-              <caret line="24" column="54" selection-start-line="0" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="project_card_list.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/Partial/project_card_list.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.375">
-              <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="project_create.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/Management/project_create.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.75">
-              <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Home.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Home.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.75">
-              <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Home.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/API/Home.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8425197">
-              <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Management.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/API/Management.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.0">
-              <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-              <folding />
+            <state vertical-scroll-proportion="0.4334601">
+              <caret line="64" column="35" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
+              <folding>
+                <element signature="n#index#0;n#Management#0;n#!!top" expanded="false" />
+                <element signature="n#project#0;n#Management#0;n#!!top" expanded="false" />
+                <element signature="n#project_create#0;n#Management#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,11 +57,13 @@
         <option value="$PROJECT_DIR$/application/models/Project_model.php" />
         <option value="$PROJECT_DIR$/application/views/Management/project.php" />
         <option value="$PROJECT_DIR$/application/core/NG_Controller.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Management.php" />
         <option value="$PROJECT_DIR$/library/js/home/index.js" />
         <option value="$PROJECT_DIR$/application/views/Partial/card_list.php" />
-        <option value="$PROJECT_DIR$/application/views/Partial/project_card_list.php" />
         <option value="$PROJECT_DIR$/application/controllers/API/Home.php" />
+        <option value="$PROJECT_DIR$/application/views/_Layout/header.php" />
+        <option value="$PROJECT_DIR$/application/views/Partial/project_card_list.php" />
+        <option value="$PROJECT_DIR$/application/views/Management/project_detail.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Management.php" />
       </list>
     </option>
   </component>
@@ -378,6 +312,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_Layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NEWGENERATION-WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NEWGENERATION-WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -603,22 +559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75">
-          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/Home/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.375">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library/js/home/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -635,40 +575,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/Partial/project_card_list.php">
+    <entry file="file://$PROJECT_DIR$/application/views/Home/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.375">
-          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+        <state vertical-scroll-proportion="-13.125">
+          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Management.php">
+    <entry file="file://$PROJECT_DIR$/application/views/Partial/project_card_list.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5511811">
-          <caret line="75" column="44" selection-start-line="75" selection-start-column="44" selection-end-line="75" selection-end-column="44" />
-          <folding>
-            <element signature="n#index#0;n#Management#0;n#!!top" expanded="false" />
-            <element signature="n#project#0;n#Management#0;n#!!top" expanded="false" />
-            <element signature="n#project_detail#0;n#Management#0;n#!!top" expanded="false" />
-            <element signature="n#project_create#0;n#Management#0;n#!!top" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="-18.125">
+          <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/Management/project_detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34220532">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/Management/notice_detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38022813">
+          <caret line="20" column="6" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/_Layout/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21653543">
+          <caret line="11" column="73" selection-start-line="11" selection-start-column="73" selection-end-line="11" selection-end-column="73" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/Management/project_create.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75">
+        <state vertical-scroll-proportion="0.26615968">
           <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26615968">
+          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/API/Home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8425197">
-          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.507874">
+          <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Management.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4334601">
+          <caret line="64" column="35" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
+          <folding>
+            <element signature="n#index#0;n#Management#0;n#!!top" expanded="false" />
+            <element signature="n#project#0;n#Management#0;n#!!top" expanded="false" />
+            <element signature="n#project_create#0;n#Management#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
