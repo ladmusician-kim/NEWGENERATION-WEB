@@ -22,6 +22,14 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="form-group form-group-label">
+                                <div class="row">
+                                    <div class="col-lg-12 col-sm-8">
+                                        <label class="floating-label" for="float-text">설명</label>
+                                        <input class="form-control ng-summary" name="summary" id="float-text" type="text">
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-group form-group-label control-highlight">
                                 <div class="row">
                                     <div class="col-lg-12 col-sm-8">
@@ -32,9 +40,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                        </fieldset>
-                        <fieldset>
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-lg-2 col-md-3 col-sm-4">
@@ -47,8 +52,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </fieldset>
-                        <fieldset>
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-lg-2 col-md-3 col-sm-4">
@@ -61,8 +64,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </fieldset>
-                        <fieldset>
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-lg-2 col-md-3 col-sm-4">
@@ -78,11 +79,10 @@
                                 </div>
                             </div>
                         </fieldset>
-
                         <div class="form-group-btn text-center">
                             <a class="btn waves-button waves-effect" href="<?=site_url('/Management/project')?>">뒤로가기</a>
                             <button class="btn btn-blue waves-button waves-light waves-effect" type="button" id="ng-submit">
-                                글쓰기
+                                프로젝트 생성
                             </button>
                         </div>
                     </form>

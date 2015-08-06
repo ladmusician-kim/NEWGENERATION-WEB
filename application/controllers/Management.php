@@ -60,6 +60,7 @@ class Management extends NG_Controller {
 		$this->load->model('notice_model');
 		$input_data = array (
 			'title' => $this->input->post('title'),
+			'summary' => $this->input->post('summary'),
 			'content' => $this->input->post('content'),
 			'start_date' =>$this->handle_date($this->input->post('start_date')),
 			'end_date' => $this->handle_date($this->input->post('end_date')),

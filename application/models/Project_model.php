@@ -7,6 +7,7 @@ class Project_model extends CI_Model {
     function add($data) {
         $input_data = array(
             'title'     =>  $data['title'],
+            'summary'     =>  $data['summary'],
             'content'    =>  $data['content'],
             'created'    =>  date("Y-m-d"),
             'start_date'    =>  $data['start_date'],
