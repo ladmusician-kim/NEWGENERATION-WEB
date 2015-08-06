@@ -72,6 +72,10 @@ class User_model extends CI_Model {
         return $base_dto;
     }
 
+    function get_admin_users() {
+        return $this->db->query("SELECT * FROM user WHERE isadmin = true  ORDER BY _id DESC")->result();
+    }
+
 
     
 }

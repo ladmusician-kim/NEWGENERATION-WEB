@@ -8,22 +8,12 @@ class Management extends NG_Controller {
         $this->load->helper('url');
     }
 
-    function get_users () {
+    function get_admin_users () {
         $this->load->model('user_model');
-        $page = $this->input->get('page');
-        $per_page = $this->input->get('perPage');
 
-        if ($page === null || $per_page === null) {
-            $page = 1;
-            $perPage = 10;
-        }
-
-        $users = $this->user_model->get_users(null, null, $page, $perPage);
-        $total_count = $this->user_model->get_all_user_count();
-
-        $last_page = ceil($total_count / $perPage);
+        $users = $this->user_model->get_admin_users();
 
         $this->__get_partial_view('Partial/user_list',
-            array ('users' => $users->return_body, 'page' => $page, 'perPage' => $perPage, 'last_page' => $last_page));
+            array ('users' => $users));
     }
 }

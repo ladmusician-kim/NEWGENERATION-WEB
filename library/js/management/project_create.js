@@ -31,7 +31,7 @@ $("#ng-submit").click(function(){
 });
 
 $('.ng-modal-admin-btn').click(function () {
-    getJson('/NEWGENERATION/API/Management/get_users', {},
+    getJson('/NEWGENERATION/API/Management/get_admin_users', {},
         function (data) {
             $($('#ng-user-list')[0]).html(data);
 
