@@ -27,7 +27,26 @@ class Home extends NG_Controller {
 
 		$last_page = ceil($total_count / $perPage);
 
-		$this->__get_partial_view('Partial/card_list', 
+		$this->__get_partial_view('Partial/notice_card_list',
 			array ('notices' => $notices->return_body, 'page' => $page, 'perPage' => $perPage, 'last_page' => $last_page));	
+	}
+
+	function get_projects () {
+		$this->load->model('project_model');
+		$page = $this->input->get('page');
+		$per_page = $this->input->get('perPage');
+
+		if ($page === null || $per_page === null) {
+			$page = 1;
+			$perPage = 12;
+		}
+
+		$projects = $this->project_model->get_items(null, null, $page, $perPage);
+		$total_count = $this->project_model->get_all_count();
+
+		$last_page = ceil($total_count / $perPage);
+
+		$this->__get_partial_view('Partial/project_card_list',
+			array ('projects' => $projects->return_body, 'page' => $page, 'perPage' => $perPage, 'last_page' => $last_page));
 	}
 }

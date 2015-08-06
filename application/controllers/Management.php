@@ -35,7 +35,7 @@ class Management extends NG_Controller {
 
 		if ($page === null || $per_page === null) {
 			$page = 1;
-			$per_page = 10;
+			$per_page = 12;
 		}
 
 		$projects = $this->project_model->get_items(null, null, $page, $per_page);
